@@ -1,6 +1,7 @@
 Nous partons sur un système d’exploitation Ubuntu 18.04 afin de pouvoir profiter du simulateur
-de MuSHR également car celui-ci n’est pas encore fonctionnel en 20.04 à l’heure actuelle. Le reste
-peut cependant être installé également en Ubuntu 20.04
+de MuSHR également car celui-ci n’est pas encore fonctionnel en 20.04 à l’heure actuelle 
+(bien que nous ne l'installons pas ici, il peut être utile pour certain). 
+Le reste peut cependant être installé également en Ubuntu 20.04
 
 # 0.1 Installation
 
@@ -140,8 +141,8 @@ informations à propos du dataset utilisé et de sa localisation et il l’exéc
 également de pouvoir lancer plusieurs runs d’à filé et d’enregistrer les résultats dans un répertoire
 défini.
 
-Afin de l’utiliser, il faut faire un fichier config.yaml dans lequel il faut mettre quelques informa-
-tions sur le dataset utilisé ainsi que le type de SLAM à effectuer. Il lance ensuite ORB_SLAM3
+Afin de l’utiliser, il faut faire un fichier config.yaml dans lequel il faut mettre quelques informations 
+sur le dataset utilisé ainsi que le type de SLAM à effectuer. Il lance ensuite ORB_SLAM3
 avec les paramètres adaptés.
 
 
