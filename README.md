@@ -29,10 +29,10 @@ Installer les prérequis
 
 ```
 sudo apt install build-essential cmake git pkg-config libgtk-3-dev \
-libavcodec-dev libavformat-dev libswscale-dev libv4l-dev nano \
-libxvidcore-dev libx264-dev libjpeg-dev libpng-dev libtiff-dev \
-gfortran openexr libatlas-base-dev curl wget autoconf automake \
-libtbb2 libtbb-dev libdc1394-22-dev libssl-dev libboost-all-dev
+  libavcodec-dev libavformat-dev libswscale-dev libv4l-dev nano \
+  libxvidcore-dev libx264-dev libjpeg-dev libpng-dev libtiff-dev \
+  gfortran openexr libatlas-base-dev curl wget autoconf automake \
+  libtbb2 libtbb-dev libdc1394-22-dev libssl-dev libboost-all-dev
 ```
 
 ## 0.1.3 Eigen3
@@ -70,12 +70,12 @@ cd ~/code_dir/opencv_build/opencv
 mkdir build && cd build
 #This could take a while
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
--D CMAKE_INSTALL_PREFIX=/usr/local \
--D INSTALL_C_EXAMPLES=ON \
--D INSTALL_PYTHON_EXAMPLES=ON \
--D OPENCV_GENERATE_PKGCONFIG=ON \
--D OPENCV_EXTRA_MODULES_PATH=~/code_dir/opencv_build/opencv_contrib/modules \
--D BUILD_EXAMPLES=ON ..
+  -D CMAKE_INSTALL_PREFIX=/usr/local \
+  -D INSTALL_C_EXAMPLES=ON \
+  -D INSTALL_PYTHON_EXAMPLES=ON \
+  -D OPENCV_GENERATE_PKGCONFIG=ON \
+  -D OPENCV_EXTRA_MODULES_PATH=~/code_dir/opencv_build/opencv_contrib/modules \
+  -D BUILD_EXAMPLES=ON ..
 make -j8 # -j8 a changer selon le nombre de coeurs du processeur
 sudo make install
 ```
@@ -111,11 +111,11 @@ Exemple TUM-VI :
 ```
 cd ~/code_dir/ORB_SLAM3/Exemples/Stereo-Inertial
 # args : Voc CamParam Cam1 Cam2 TimeStamps IMU
-./stereo_inertial_tum_vi ../../Vocabulary/ORBvoc.txt TUM-VI.yaml \
-~/dataset/TUM-VI/dataset-corridor4_512/mav0/cam0/data \
-~/dataset/TUM-VI/dataset-corridor4_512/mav0/cam1/data \
-TUM_Timestamps/dataset-corridor4_512.txt \
-TUM_IMU/dataset-corridor4_512.txt
+  ./stereo_inertial_tum_vi ../../Vocabulary/ORBvoc.txt TUM-VI.yaml \
+  ~/dataset/TUM-VI/dataset-corridor4_512/mav0/cam0/data \
+  ~/dataset/TUM-VI/dataset-corridor4_512/mav0/cam1/data \
+  TUM_Timestamps/dataset-corridor4_512.txt \
+  TUM_IMU/dataset-corridor4_512.txt
 ```
 
 Pour faire du multi-sequences, il faut faire ainsi :
@@ -124,15 +124,15 @@ Pour faire du multi-sequences, il faut faire ainsi :
 cd ~/code_dir/ORB_SLAM3/Exemples/Stereo-Inertial
 # args : Voc CamParam Cam1Seq1 Cam2Seq1 TimeStampsSeq1 IMUSeq1
 # Cam1Seq2 Cam2Seq2 TimeStampsSeq2 IMUSeq2
-./stereo_inertial_tum_vi ../../Vocabulary/ORBvoc.txt TUM-VI.yaml \
-~/dataset/TUM-VI/dataset-corridor4_512/mav0/cam0/data \
-~/dataset/TUM-VI/dataset-corridor4_512/mav0/cam1/data \
-TUM_Timestamps/dataset-corridor4_512.txt \
-TUM_IMU/dataset-corridor4_512.txt \
-~/dataset/TUM-VI/dataset-slides2_512/mav0/cam0/data \
-~/dataset/TUM-VI/dataset-slides2_512/mav0/cam1/data \
-TUM_Timestamps/dataset-slides2_512.txt \
-TUM_IMU/dataset-slides2_512.txt
+  ./stereo_inertial_tum_vi ../../Vocabulary/ORBvoc.txt TUM-VI.yaml \
+  ~/dataset/TUM-VI/dataset-corridor4_512/mav0/cam0/data \
+  ~/dataset/TUM-VI/dataset-corridor4_512/mav0/cam1/data \
+  TUM_Timestamps/dataset-corridor4_512.txt \
+  TUM_IMU/dataset-corridor4_512.txt \
+  ~/dataset/TUM-VI/dataset-slides2_512/mav0/cam0/data \
+  ~/dataset/TUM-VI/dataset-slides2_512/mav0/cam1/data \
+  TUM_Timestamps/dataset-slides2_512.txt \
+  TUM_IMU/dataset-slides2_512.txt
 ```
 
 J’ai également réalisé un script python permettant de facilement lancer un des ensembles de
