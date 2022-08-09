@@ -95,7 +95,7 @@ pip3 install evo --upgrade --no-binary evo
 Pour installer ce fork d'ORB SLAM3 : 
 ```
 cd ~/code_dir
-git clone https://github.com/guillrobert/ORB-SLAM3.git
+git clone https://github.com/guillrobert/ORB_SLAM3.git
 cd ORB_SLAM3
 chmod +x build.sh
 ./build.sh
