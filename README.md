@@ -8,6 +8,7 @@ de MuSHR également car celui-ci n’est pas encore fonctionnel en 20.04 à l’
 Le reste peut cependant être installé également en Ubuntu 20.04
 On partira du principe que nous installeront toutes les librairies et dépendances dans un dossier
 "code_dir" déjà existant dans le home directory.
+
 Mettre à jour le manager de packets
 
 ```
