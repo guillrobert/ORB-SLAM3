@@ -1,10 +1,11 @@
+Nous nous basons sur ORB_SLAM3 que nous avons légèrement modifié afin de résondre certains problème rencontrés avec le code oiginal. Nous avons également ajoutés des scripts afin de simplifier son utilisation et d'effectuer une analyse des données rendues
+
+# 0.1 Installation
+
 Nous partons sur un système d’exploitation Ubuntu 18.04 afin de pouvoir profiter du simulateur
 de MuSHR également car celui-ci n’est pas encore fonctionnel en 20.04 à l’heure actuelle 
 (bien que nous ne l'installons pas ici, il peut être utile pour certain). 
 Le reste peut cependant être installé également en Ubuntu 20.04
-
-# 0.1 Installation
-
 On partira du principe que nous installeront toutes les librairies et dépendances dans un dossier
 "code_dir" déjà existant dans le home directory.
 Mettre à jour le manager de packets
@@ -80,26 +81,24 @@ make -j8 # -j8 a changer selon le nombre de coeurs du processeur
 sudo make install
 ```
 
-## 0.1.6 ORB SLAM3
-
-Installer ORB SLAM3 :
-
-```
-cd ~/code_dir
-git clone https://github.com/UZ-SLAMLab/ORB_SLAM3.git ORB_SLAM3
-cd ORB_SLAM3
-chmod +x build.sh
-#This could take a while
-./build.sh
-```
-
-## 0.1.7 Evo
+## 0.1.6 Evo
 
 Installer evo pour l’évaluation :
 
 ```
 sudo apt-get install python3-tk
 pip3 install evo --upgrade --no-binary evo
+```
+
+## 0.1.7 ORB SLAM3
+
+Pour installer ce fork d'ORB SLAM3 : 
+```
+cd ~/code_dir
+git clone https://github.com/guillrobert/ORB-SLAM3.git
+cd ORB_SLAM3
+chmod +x build.sh
+./build.sh
 ```
 
 # 0.2 Utilisation
