@@ -143,9 +143,11 @@ donnés qui ont un exemple sur ORB SLAM3. Il faut pour cela mettre dans le fichi
 informations à propos du dataset utilisé et de sa localisation et il l’exécutera tout seul. Il permet
 également de pouvoir lancer plusieurs séquences d’à filé et d’enregistrer les résultats dans le répertoire 'results'.
 
-si on souhaite activer/désactiver l'interface utilisateur, il faut pour cela modifier le fichier cpp exécuté (donc stereo_inertial_tum_vi.cpp si on veut lancer du stéréo-inertiel sur tum vi) et rebuild le projet ensuite (avec ./build.sh)
+si on souhaite activer/désactiver l'interface utilisateur, il faut pour cela modifier le fichier cpp exécuté (donc stereo_inertial_tum_vi.cpp si on veut lancer du stéréo-inertiel) et rebuild le projet ensuite (avec `./build.sh`)
 
 Ce script permet d'utiliser un dataset en local uniquement, il est aussi capable de chercher les images sur un disque externe mais cela fausse les résultats car dans le temps de calcul est compté le temps d'accès aux image (bien plus long dans le cas d'un disque externe). Un début d'adaptation pour contrer cela à été fait, mais il est pour l'instant non fonctionnel.
+
+À noter que ce script utilise l'exécutable c++ de TUM vi pour les deux datasets car celui d'EuRoC n'est adapté que pour les vérité terrain (il contient trop d'informations) et que Evo ne peut comparer que des trajectoires en formats TUM vi (il peut cependant convertir une trajectoire du format euroc au format tum vi à l'aide de la commande `evo_traj euroc --save_as_tum <traj>`).
 
 On le lance ensuite avec la commande :
 
@@ -156,6 +158,7 @@ python3 ORB_SLAM3_v0.x.py
 Sur les multiples version (0.1, 0.2 et 0.3) la 0.3 est plus simple d'utilisation mais un peu moins flexible que la 0.1. La 0.2 n'était qu'un passage entre les deux.
 On utilise la même version du fichier de config que de l'exécutable.
 
+À noter également que les vérité terrains sont dans le dosier 'Ground_Truth' au format TUM vi
 
 
 Afin d’évaluer les résultats dans le cas des ensembles de donnés de TUM-vi et EuRoC,
