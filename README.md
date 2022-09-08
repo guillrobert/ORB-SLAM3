@@ -1,13 +1,16 @@
-Nous nous basons sur ORB_SLAM3 que nous avons légèrement modifié afin de résondre certains problème rencontrés avec le code oiginal. Nous avons également ajoutés des scripts afin de simplifier son utilisation et d'effectuer une analyse des données rendues
+Ce git est basé sur ORB_SLAM3 légèrement modifié afin de résondre certains problèmes de crashs rencontrés avec le code oiginal. À également été ajoutés des scripts afin de simplifier son utilisation et d'effectuer une analyse des données rendues.
 
 # 0.1 Installation
 
-Nous partons sur un système d’exploitation Ubuntu 18.04 afin de pouvoir profiter du simulateur
+Il a été fait pour système d’exploitation Ubuntu 18.04 afin de pouvoir profiter du simulateur
 de MuSHR également car celui-ci n’est pas encore fonctionnel en 20.04 à l’heure actuelle 
-(bien que nous ne l'installons pas ici, il peut être utile pour certain). 
+(Cela dit, nous ne l'installons pas ici, mais il peut être utile pour certains). 
 Le reste peut cependant être installé également en Ubuntu 20.04
-On partira du principe que nous installeront toutes les librairies et dépendances dans un dossier
-"code_dir" déjà existant dans le home directory.
+
+Il faudra remplacer "~/code_dir" par votre workspace (l'emplacement où vous comptez le placer) pour l'installation et l'utilisation.
+
+Pour toute la partie installation, une connexion internet est requise.
+
 
 Mettre à jour le manager de packets
 
@@ -142,14 +145,16 @@ informations à propos du dataset utilisé et de sa localisation et il l’exéc
 
 si on souhaite activer/désactiver l'interface utilisateur, il faut pour cela modifier le fichier cpp exécuté (donc stereo_inertial_tum_vi.cpp si on veut lancer du stéréo-inertiel sur tum vi) et rebuild le projet ensuite (avec ./build.sh)
 
+Ce script permet d'utiliser un dataset en local uniquement, il est aussi capable de chercher les images sur un disque externe mais cela fausse les résultats car dans le temps de calcul est compté le temps d'accès aux image (bien plus long dans le cas d'un disque externe). Un début d'adaptation pour contrer cela à été fait, mais il est pour l'instant non fonctionnel.
+
 On le lance ensuite avec la commande :
 
 ```
 python3 ORB_SLAM3.py
 ```
 
-Afin d’évaluer les résultats dans le cas des ensembles de donnés de TUM-vi, Kitti ainsi que
-EuRoC, le script Data_analysis.py permet d’enregistrer et d’afficher les résultats sous une forme
+Afin d’évaluer les résultats dans le cas des ensembles de donnés de TUM-vi et EuRoC,
+le script Data_analysis.py permet d’enregistrer et d’afficher les résultats sous une forme
 permettant une analyse simple de chaque séquence pour chaque paramètre qui a été lancés 
 précédemment avec ORB_SLAM3.py
 
