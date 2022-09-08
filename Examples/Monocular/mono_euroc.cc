@@ -96,7 +96,7 @@ int main(int argc, char **argv)
         {
 
             // Read image from file
-            im = cv::imread(vstrImageFilenames[seq][ni],cv::IMREAD_UNCHANGED); //,CV_LOAD_IMAGE_UNCHANGED);
+            im = cv::imread(vstrImageFilenames[seq][ni],cv::IMREAD_GRAYSCALE); //,CV_LOAD_IMAGE_UNCHANGED);
             double tframe = vTimestampsCam[seq][ni];
 
             if(im.empty())
@@ -174,8 +174,8 @@ int main(int argc, char **argv)
         {
             string kf_file_submap =  "./SubMaps/kf_SubMap_" + std::to_string(seq) + ".txt";
             string f_file_submap =  "./SubMaps/f_SubMap_" + std::to_string(seq) + ".txt";
-            SLAM.SaveTrajectoryEuRoC(f_file_submap);
-            SLAM.SaveKeyFrameTrajectoryEuRoC(kf_file_submap);
+            SLAM.SaveTrajectoryTUM(f_file_submap);
+            SLAM.SaveKeyFrameTrajectoryTUM(kf_file_submap);
 
             cout << "Changing the dataset" << endl;
 
@@ -191,13 +191,23 @@ int main(int argc, char **argv)
     {
         const string kf_file =  "kf_" + string(argv[argc-1]) + ".txt";
         const string f_file =  "f_" + string(argv[argc-1]) + ".txt";
-        SLAM.SaveTrajectoryEuRoC(f_file);
-        SLAM.SaveKeyFrameTrajectoryEuRoC(kf_file);
+        SLAM.SaveTrajectoryTUM(f_file);
+        SLAM.SaveKeyFrameTrajectoryTUM(kf_file);
+
+        //Save computing time data
+        cout << endl << "Saving computing time to " << "t_" << string(argv[argc-1]) << ".txt" << " ..." << endl;
+        ofstream f;
+        f.open("t_" + string(argv[argc-1]) + ".txt");
+
+        for (int i=0;i<nImages[0];i++){
+            f << vTimesTrack[i] << endl;
+        }
+        f << endl << endl;
     }
     else
     {
-        SLAM.SaveTrajectoryEuRoC("CameraTrajectory.txt");
-        SLAM.SaveKeyFrameTrajectoryEuRoC("KeyFrameTrajectory.txt");
+        SLAM.SaveTrajectoryTUM("CameraTrajectory.txt");
+        SLAM.SaveKeyFrameTrajectoryTUM("KeyFrameTrajectory.txt");
     }
 
     return 0;

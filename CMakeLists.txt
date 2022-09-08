@@ -268,6 +268,20 @@ if(realsense2_FOUND)
     target_link_libraries(recorder_realsense_T265 ${PROJECT_NAME})
 endif()
 
+#Code perso
+
+#add_executable(stereo_inertial_perso_tum_vi
+#        Code_perso/Stereo-Inertial/stereo_inertial_perso_tum_vi.cc)
+#target_link_libraries(stereo_inertial_tum_vi ${PROJECT_NAME})
+
+#add_executable(stereo_perso_tum_vi
+#        Code_perso/Stereo/stereo_perso_tum_vi.cc)
+#target_link_libraries(stereo_tum_vi ${PROJECT_NAME})
+
+#add_executable(stereo_perso_kitti
+#        Code_perso/Stereo/stereo_kitti.cc)
+#target_link_libraries(stereo_kitti ${PROJECT_NAME})
+
 #Old examples
 
 # RGB-D examples

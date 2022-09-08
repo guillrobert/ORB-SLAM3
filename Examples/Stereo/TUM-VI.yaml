@@ -31,6 +31,7 @@ Camera2.k2: 0.001766278153469831
 Camera2.k3: -0.00266312569781606
 Camera2.k4: 0.0003299517423931039
 
+# Transformation matrix from right camera to left camera
 Stereo.T_c1_c2: !!opencv-matrix
   rows: 4
   cols: 4
@@ -40,16 +41,16 @@ Stereo.T_c1_c2: !!opencv-matrix
             -0.000656143613644,  -0.046896036240590,   0.998899560146304,   0.001015350132563,
             0.0,0.0,0.0,1.0]
 
-# Camera resolution
-Camera.width: 512
-Camera.height: 512
-
 # Lapping area between images
-Camera.overlappingBegin: 0
-Camera.overlappingEnd: 511
+Camera1.overlappingBegin: 0
+Camera1.overlappingEnd: 511
 
 Camera2.overlappingBegin: 0
 Camera2.overlappingEnd: 511
+
+# Camera resolution
+Camera.width: 512
+Camera.height: 512
 
 # Camera frames per second
 Camera.fps: 20
@@ -65,14 +66,13 @@ Stereo.ThDepth: 40.0
 #--------------------------------------------------------------------------------------------
 
 # ORB Extractor: Number of features per image
-ORBextractor.nFeatures: 1000
+ORBextractor.nFeatures: 800
 
 # ORB Extractor: Scale factor between levels in the scale pyramid
 ORBextractor.scaleFactor: 1.2
 
 # ORB Extractor: Number of levels in the scale pyramid
 ORBextractor.nLevels: 8
-
 
 # ORB Extractor: Fast threshold
 # Image is divided in a grid. At each cell FAST are extracted imposing a minimum response.

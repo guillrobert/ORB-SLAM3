@@ -1,0 +1,64 @@
+---
+exec: ./../Examples/Stereo-Inertial/stereo_inertial_tum_vi
+vocabulary: ~/code_dir/ORB_SLAM3/Vocabulary/ORBvoc.txt
+settings: ~/code_dir/ORB_SLAM3/Examples/Stereo-Inertial/TUM-VI.yaml
+path_dataset: ~/datasets/TUM_vi/dataset-corridor4_512_16/
+image_1: /mav0/cam0/data/
+image_2: /mav0/cam1/data/
+timestamps: ~/code_dir/ORB_SLAM3/Examples/Stereo-Inertial/TUM_TimeStamps/dataset-corridor4_512.txt 
+imudata: ~/code_dir/ORB_SLAM3/Examples/Stereo-Inertial/TUM_IMU/dataset-corridor4_512.txt
+save_path: /home/robert/code_dir/ORB_SLAM3/Code_perso/results/
+save_name: corridor4_512
+...
+---
+exec: ./../Examples/Stereo-Inertial/stereo_inertial_tum_vi
+vocabulary: ~/code_dir/ORB_SLAM3/Vocabulary/ORBvoc.txt
+settings: ~/code_dir/ORB_SLAM3/Examples/Stereo-Inertial/TUM-VI.yaml
+path_dataset: ~/datasets/TUM_vi/dataset-slides2_512_16/
+image_1: /mav0/cam0/data/
+image_2: /mav0/cam1/data/
+timestamps: ~/code_dir/ORB_SLAM3/Examples/Stereo-Inertial/TUM_TimeStamps/dataset-slides2_512.txt 
+imudata: ~/code_dir/ORB_SLAM3/Examples/Stereo-Inertial/TUM_IMU/dataset-slides2_512.txt
+save_path: /home/robert/code_dir/ORB_SLAM3/Code_perso/results/
+save_name: slides2_512
+...
+---
+exec: ./../Examples/Stereo-Inertial/stereo_inertial_tum_vi
+vocabulary: ~/code_dir/ORB_SLAM3/Vocabulary/ORBvoc.txt
+settings: ~/code_dir/ORB_SLAM3/Examples/Stereo-Inertial/TUM-VI.yaml
+path_dataset: ~/datasets/TUM_vi/dataset-outdoors4_512_16/
+image_1: /mav0/cam0/data/
+image_2: /mav0/cam0/data/
+timestamps: ~/code_dir/ORB_SLAM3/Examples/Stereo-Inertial/TUM_TimeStamps/dataset-outdoors4_512.txt 
+imudata: ~/code_dir/ORB_SLAM3/Examples/Stereo-Inertial/TUM_IMU/dataset-outdoors4_512.txt
+save_path: /home/robert/code_dir/ORB_SLAM3/Code_perso/results/
+save_name: outdoors4_512
+...
+
+# TEST SUR DISQUE EXTERNE
+---
+exec: ./../Examples/Stereo-Inertial/stereo_inertial_tum_vi
+vocabulary: ~/code_dir/ORB_SLAM3/Vocabulary/ORBvoc.txt
+settings: ~/code_dir/ORB_SLAM3/Examples/Stereo-Inertial/TUM-VI.yaml
+path_data_ext: /media/robert/DD_Guillaume/TUM_vi/dataset-corridor4_512_16/
+image_1: /mav0/cam0/data/
+image_2: /mav0/cam1/data/
+timestamps: ~/code_dir/ORB_SLAM3/Examples/Stereo-Inertial/TUM_TimeStamps/dataset-corridor4_512.txt 
+imudata: ~/code_dir/ORB_SLAM3/Examples/Stereo-Inertial/TUM_IMU/dataset-corridor4_512.txt
+save_path: /home/robert/code_dir/ORB_SLAM3/Code_perso/results/
+save_name: corridor4_512_DD
+...
+
+# TEST MONO KITTI
+---
+exec: ./../Examples/Monocular/mono_kitti
+vocabulary: ~/code_dir/ORB_SLAM3/Vocabulary/ORBvoc.txt
+settings: ~/code_dir/ORB_SLAM3/Examples/Monocular/KITTI00-02.yaml
+path_data_ext: /media/robert/DD_Guillaume/Kitti/old/00
+image_1: /image_2/
+image_2: /image_3/
+timestamps: ~/code_dir/ORB_SLAM3/Examples/Stereo-Inertial/TUM_TimeStamps/dataset-corridor4_512.txt 
+imudata: ~/code_dir/ORB_SLAM3/Examples/Stereo-Inertial/TUM_IMU/dataset-corridor4_512.txt
+save_path: /home/robert/code_dir/ORB_SLAM3/Code_perso/results/
+save_name: corridor4_512_DD
+...

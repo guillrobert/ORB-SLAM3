@@ -1,0 +1,74 @@
+---
+# slam_type : monocular ; mono-inertial ; stereo ; stereo-inertial
+slam_type: stereo-inertial
+
+# dataset : tum ; euroc ; kitti
+dataset: euroc
+
+# if the dataset is on an external drive, use path_data_ext, else use path_dataset
+path_dataset: 
+  - ~/datasets/EuRoC/V2_03_difficult
+# path_data_ext: /media/....
+
+# name of the timestamp file (without the extension)
+# timestamp files are in the Exemples files of ORB_SLAM3
+timestamps_name: V203
+
+# name of the results files
+save_name: V2_03_difficult_stereo_inertial
+...
+
+---
+# slam_type : monocular ; mono-inertial ; stereo ; stereo-inertial
+slam_type: stereo
+
+# dataset : tum ; euroc ; kitti
+dataset: euroc
+
+# if the dataset is on an external drive, use path_data_ext, else use path_dataset
+path_dataset: ~/datasets/EuRoC/V2_03_difficult
+# path_data_ext: /media/....
+
+# name of the timestamp file (without the extension)
+# timestamp files are in the Exemples files of ORB_SLAM3
+timestamps_name: V203
+
+# name of the results files
+save_name: V2_03_difficult_stereo
+...
+
+---
+# slam_type : monocular ; mono-inertial ; stereo ; stereo-inertial
+slam_type: mono-inertial
+
+# dataset : tum ; euroc ; kitti
+dataset: euroc
+
+# if the dataset is on an external drive, use path_data_ext, else use path_dataset
+path_dataset: ~/datasets/EuRoC/V2_03_difficult
+# path_data_ext: /media/....
+
+# name of the timestamp file (without the extension)
+timestamps_name: V203
+
+# name of the results files
+save_name: V2_03_difficult_mono_inertial
+...
+
+---
+# slam_type : monocular ; mono-inertial ; stereo ; stereo-inertial
+slam_type: monocular
+
+# dataset : tum ; euroc ; kitti
+dataset: euroc
+
+# if the dataset is on an external drive, use path_data_ext, else use path_dataset
+path_dataset: ~/datasets/EuRoC/V2_03_difficult
+# path_data_ext: /media/....
+
+# name of the timestamp file (without the extension)
+timestamps_name: V203
+
+# name of the results files
+save_name: V2_03_difficult_mono
+...

@@ -1,0 +1,43 @@
+---
+# slam_type : monocular ; mono-inertial ; stereo ; stereo-inertial
+slam_type: monocular
+
+# dataset : tum ; euroc ; kitti
+dataset: euroc
+
+# if the dataset is on an external drive, use path_data_ext, else use path_dataset
+path_dataset: 
+  - ~/datasets/EuRoC/MH_02_easy
+# path_data_ext: /media/....
+
+# name of the timestamp file (without the extension)
+# timestamp files are in the Exemples files of ORB_SLAM3
+timestamps_name: 
+  - MH02
+
+# name of the results files
+save_name: MH_02_mono
+...
+
+
+
+---
+# slam_type : monocular ; mono-inertial ; stereo ; stereo-inertial
+slam_type: mono-inertial
+
+# dataset : tum ; euroc ; kitti
+dataset: euroc
+
+# if the dataset is on an external drive, use path_data_ext, else use path_dataset
+path_dataset: 
+  - ~/datasets/EuRoC/MH_02_easy
+# path_data_ext: /media/....
+
+# name of the timestamp file (without the extension)
+# timestamp files are in the Exemples files of ORB_SLAM3
+timestamps_name: 
+  - MH02
+
+# name of the results files
+save_name: MH_02_mono-inertial
+...

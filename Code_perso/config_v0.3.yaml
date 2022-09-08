@@ -1,0 +1,46 @@
+---
+# slam_type : monocular ; mono-inertial ; stereo ; stereo-inertial
+slam_type: mono-inertial
+
+# dataset : tum ; euroc ; kitti
+dataset: tum
+
+# if the dataset is on an external drive, use path_data_ext, else use path_dataset
+path_dataset: 
+  - ~/datasets/TUM_vi/dataset-room1_512_16
+  - ~/datasets/TUM_vi/dataset-outdoors4_512_16
+# path_data_ext: /media/....
+
+# name of the timestamp file (without the extension)
+# timestamp files are in the Exemples files of ORB_SLAM3
+timestamps_name: 
+  - dataset-room1_512
+  - dataset-outdoors4_512
+
+# name of the results files
+save_name: multitraj_mono-inertial
+...
+
+
+---
+# slam_type : monocular ; mono-inertial ; stereo ; stereo-inertial
+slam_type: stereo-inertial
+
+# dataset : tum ; euroc ; kitti
+dataset: tum
+
+# if the dataset is on an external drive, use path_data_ext, else use path_dataset
+path_dataset: 
+  - ~/datasets/TUM_vi/dataset-room1_512_16
+  - ~/datasets/TUM_vi/dataset-outdoors4_512_16
+# path_data_ext: /media/....
+
+# name of the timestamp file (without the extension)
+# timestamp files are in the Exemples files of ORB_SLAM3
+timestamps_name: 
+  - dataset-room1_512
+  - dataset-outdoors4_512
+
+# name of the results files
+save_name: multitraj_stereo-inertial
+...

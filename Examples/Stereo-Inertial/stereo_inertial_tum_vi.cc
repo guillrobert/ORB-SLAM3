@@ -38,16 +38,14 @@ void LoadIMU(const string &strImuPath, vector<double> &vTimeStamps, vector<cv::P
 double ttrack_tot = 0;
 int main(int argc, char **argv)
 {
-    const int num_seq = (argc-3)/4;
+    const int num_seq = (argc-4)/4;
     cout << "num_seq = " << num_seq << endl;
-    bool bFileName= (((argc-3) % 4) == 1);
     string file_name;
-    if (bFileName)
-        file_name = string(argv[argc-1]);
+    file_name = string(argv[argc-1]);
 
-    if(argc < 7) 
+    if((argc-4)%4 != 0)
     {
-        cerr << endl << "Usage: ./stereo_inertial_tum_vi path_to_vocabulary path_to_settings path_to_image_folder_1 path_to_image_folder_2 path_to_times_file path_to_imu_data (trajectory_file_name)" << endl;
+        cerr << endl << "Usage: ./stereo_inertial_tum_vi path_to_vocabulary path_to_settings path_to_image_folder_1 path_to_image_folder_2 path_to_times_file path_to_imu_data trajectory_file_name" << endl;
         return 1;
     }
 
@@ -257,18 +255,20 @@ int main(int argc, char **argv)
     std::stringstream ss;
     ss << now;
 
-    if (bFileName)
-    {
-        const string kf_file =  "kf_" + string(argv[argc-1]) + ".txt";
-        const string f_file =  "f_" + string(argv[argc-1]) + ".txt";
-        SLAM.SaveTrajectoryEuRoC(f_file);
-        SLAM.SaveKeyFrameTrajectoryEuRoC(kf_file);
+    const string kf_file = "kf_" + string(argv[argc-1]) + ".txt";
+    const string f_file = "f_" + string(argv[argc-1]) + ".txt";
+    SLAM.SaveTrajectoryTUM(f_file);
+    SLAM.SaveKeyFrameTrajectoryTUM(kf_file);
+    
+    //Save computing time data
+    cout << endl << "Saving computing time to " << "t_" << string(argv[argc-1]) << ".txt" << " ..." << endl;
+    ofstream f;
+    f.open("t_" + string(argv[argc-1]) + ".txt");
+
+    for (int i=0;i<nImages[0];i++){
+        f << vTimesTrack[i] << endl;
     }
-    else
-    {
-        SLAM.SaveTrajectoryEuRoC("CameraTrajectory.txt");
-        SLAM.SaveKeyFrameTrajectoryEuRoC("KeyFrameTrajectory.txt");
-    }
+    f.close();
 
     sort(vTimesTrack.begin(),vTimesTrack.end());
     float totaltime = 0;
@@ -276,6 +276,7 @@ int main(int argc, char **argv)
     {
         totaltime+=vTimesTrack[ni];
     }
+
     cout << "-------" << endl << endl;
     cout << "median tracking time: " << vTimesTrack[nImages[0]/2] << endl;
     cout << "mean tracking time: " << totaltime/proccIm << endl;
@@ -287,9 +288,6 @@ void LoadImagesTUMVI(const string &strPathLeft, const string &strPathRight, cons
                 vector<string> &vstrImageLeft, vector<string> &vstrImageRight, vector<double> &vTimeStamps)
 {
     ifstream fTimes;
-    cout << strPathLeft << endl;
-    cout << strPathRight << endl;
-    cout << strPathTimes << endl;
     fTimes.open(strPathTimes.c_str());
     vTimeStamps.reserve(5000);
     vstrImageLeft.reserve(5000);
