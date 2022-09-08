@@ -139,7 +139,7 @@ cd ~/code_dir/ORB_SLAM3/Exemples/Stereo-Inertial
 ```
 
 J’ai également réalisé un script python permettant de facilement lancer un des ensembles de
-donnés qui ont un exemple sur ORB SLAM3. Il faut pour cela mettre dans le fichier config_v0.3.yaml les
+donnés qui ont un exemple sur ORB SLAM3. Il faut pour cela mettre dans le fichier config_v0.x.yaml les
 informations à propos du dataset utilisé et de sa localisation et il l’exécutera tout seul. Il permet
 également de pouvoir lancer plusieurs séquences d’à filé et d’enregistrer les résultats dans le répertoire 'results'.
 
@@ -150,19 +150,31 @@ Ce script permet d'utiliser un dataset en local uniquement, il est aussi capable
 On le lance ensuite avec la commande :
 
 ```
-python3 ORB_SLAM3.py
+python3 ORB_SLAM3_v0.x.py
 ```
+
+Sur les multiples version (0.1, 0.2 et 0.3) la 0.3 est plus simple d'utilisation mais un peu moins flexible que la 0.1. La 0.2 n'était qu'un passage entre les deux.
+On utilise la même version du fichier de config que de l'exécutable.
+
+
 
 Afin d’évaluer les résultats dans le cas des ensembles de donnés de TUM-vi et EuRoC,
 le script Data_analysis.py permet d’enregistrer et d’afficher les résultats sous une forme
 permettant une analyse simple de chaque séquence pour chaque paramètre qui a été lancés 
 précédemment avec ORB_SLAM3.py
 
+Il va effectuer séparément une analyse pour chaque sous-dossiers du dossier 'results/ORB_SLAM3_output'.
+
 On le lance avec la commande :
 
 ```
-python3 Data_analysis.py
+python3 Data_analysis_v0.x.py
 ```
+
+La version 0.1 va créer des fichiers contenant différentes informations sur les données (dans le dossier 'results/Data_analysis_output') quand le 0.2 va afficher différentes courbes à propos des trajectoires.
+
+Pour ce qui est des résultats des temps de calculs, j'ai fait le script 'Computing_time_analysis.py' aui s'exécute comme les précédents.
+Il va afficher un boxplot pour chaque sous-dossiers du dossier 'results/ORB_SLAM3_output'.
 
 ----------------------------------------------
 ----------------------------------------------
