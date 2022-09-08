@@ -104,7 +104,7 @@ chmod +x build.sh
 
 # 0.2 Utilisation
 
-Ici on va utiliser le dataset corridor4_512 de TUM-VI et slides2_512 et on considère qu’il est
+Ici on va utiliser le dataset corridor4_512 de TUM-VI et slides2_512 en stéréo-inertiel et on considère la séquence
 dans un dossier "dataset" dans le home directory
 Exemple TUM-VI :
 
@@ -136,17 +136,13 @@ cd ~/code_dir/ORB_SLAM3/Exemples/Stereo-Inertial
 ```
 
 J’ai également réalisé un script python permettant de facilement lancer un des ensembles de
-donnés qui ont un exemple sur ORB SLAM3. Il faut pour cela mettre dans le fichier config.yaml les
+donnés qui ont un exemple sur ORB SLAM3. Il faut pour cela mettre dans le fichier config_v0.3.yaml les
 informations à propos du dataset utilisé et de sa localisation et il l’exécutera tout seul. Il permet
-également de pouvoir lancer plusieurs runs d’à filé et d’enregistrer les résultats dans un répertoire
-défini.
+également de pouvoir lancer plusieurs séquences d’à filé et d’enregistrer les résultats dans le répertoire 'results'.
 
-Afin de l’utiliser, il faut faire un fichier config.yaml dans lequel il faut mettre quelques informations 
-sur le dataset utilisé ainsi que le type de SLAM à effectuer. Il lance ensuite ORB_SLAM3
-avec les paramètres adaptés.
+si on souhaite activer/désactiver l'interface utilisateur, il faut pour cela modifier le fichier cpp exécuté (donc stereo_inertial_tum_vi.cpp si on veut lancer du stéréo-inertiel sur tum vi) et rebuild le projet ensuite (avec ./build.sh)
 
-
-On le lance avec la commande :
+On le lance ensuite avec la commande :
 
 ```
 python3 ORB_SLAM3.py
