@@ -143,7 +143,7 @@ donnés qui ont un exemple sur ORB SLAM3. Il faut pour cela mettre dans le fichi
 informations à propos du dataset utilisé et de sa localisation et il l’exécutera tout seul. Il permet
 également de pouvoir lancer plusieurs séquences d’à filé et d’enregistrer les résultats dans le répertoire 'results'.
 
-si on souhaite activer/désactiver l'interface utilisateur, il faut pour cela modifier le fichier .cc exécuté (donc stereo_inertial_tum_vi.cc ligne 120, si on veut lancer du stéréo-inertiel) et rebuild le projet ensuite (avec `./build.sh`). Il faut changer `ORB_SLAM3::System SLAM(argv[1],argv[2],ORB_SLAM3::System::IMU_STEREO, true, 0);` (ou équivalent) en `ORB_SLAM3::System SLAM(argv[1],argv[2],ORB_SLAM3::System::IMU_STEREO, false, 0);` pour désactiver l'interface, et l'inverse pour l'activer.
+si on souhaite activer/désactiver l'interface utilisateur, il faut pour cela modifier le fichier .cc exécuté ('stereo_inertial_euroc.cc' à la ligne 120, si on veut lancer du stéréo-inertiel) et rebuild le projet ensuite (avec `./build.sh`). Il faut changer `ORB_SLAM3::System SLAM(argv[1],argv[2],ORB_SLAM3::System::IMU_STEREO, true, 0);` (ou équivalent) en `ORB_SLAM3::System SLAM(argv[1],argv[2],ORB_SLAM3::System::IMU_STEREO, false, 0);` pour désactiver l'interface, et l'inverse pour l'activer.
 
 À noter que ce script utilise l'exécutable c++ de EuRoC pour les deux datasets mais qu'il fourni les trajectoires en format TUM vi car il est plus adapté pour des comparaisons de trajectoires (le format euroc contient trop d'informations) et que Evo ne peut comparer que des trajectoires en formats TUM vi (il peut cependant convertir une trajectoire du format euroc au format tum vi à l'aide de la commande `evo_traj euroc --save_as_tum <traj>`).
 
