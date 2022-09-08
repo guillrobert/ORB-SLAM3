@@ -1,4 +1,4 @@
-Ce git est basé sur ORB_SLAM3 légèrement modifié afin de résondre certains problèmes de crashs rencontrés avec le code oiginal. À également été ajoutés des scripts afin de simplifier son utilisation et d'effectuer une analyse des données rendues.
+Ce git est basé sur ORB_SLAM3 légèrement modifié afin de résondre certains problèmes de crashs rencontrés avec le code oiginal. A également été ajoutés des scripts afin de simplifier son utilisation et d'effectuer une analyse des données rendues.
 
 # 0.1 Installation
 
@@ -147,7 +147,7 @@ si on souhaite activer/désactiver l'interface utilisateur, il faut pour cela mo
 
 Ce script permet d'utiliser un dataset en local uniquement, il est aussi capable de chercher les images sur un disque externe mais cela fausse les résultats car dans le temps de calcul est compté le temps d'accès aux image (bien plus long dans le cas d'un disque externe). Un début d'adaptation pour contrer cela à été fait, mais il est pour l'instant non fonctionnel.
 
-À noter que ce script utilise l'exécutable c++ de TUM vi pour les deux datasets car celui d'EuRoC n'est adapté que pour les vérité terrain (il contient trop d'informations) et que Evo ne peut comparer que des trajectoires en formats TUM vi (il peut cependant convertir une trajectoire du format euroc au format tum vi à l'aide de la commande `evo_traj euroc --save_as_tum <traj>`).
+À noter que ce script utilise l'exécutable c++ de TUM vi pour les deux datasets car le format de trajectoire d'EuRoC n'est adapté que pour les vérités terrains (il contient trop d'informations) et que Evo ne peut comparer que des trajectoires en formats TUM vi (il peut cependant convertir une trajectoire du format euroc au format tum vi à l'aide de la commande `evo_traj euroc --save_as_tum <traj>`).
 
 On le lance ensuite avec la commande :
 
@@ -155,10 +155,10 @@ On le lance ensuite avec la commande :
 python3 ORB_SLAM3_v0.x.py
 ```
 
-Sur les multiples version (0.1, 0.2 et 0.3) la 0.3 est plus simple d'utilisation mais un peu moins flexible que la 0.1. La 0.2 n'était qu'un passage entre les deux.
+Sur les multiples versions (0.1, 0.2 et 0.3) la 0.3 est plus simple d'utilisation mais un peu moins flexible que la 0.1. La 0.2 n'était qu'un passage entre les deux.
 On utilise la même version du fichier de config que de l'exécutable.
 
-À noter également que les vérité terrains sont dans le dosier 'Ground_Truth' au format TUM vi
+À noter également que les vérités terrains sont dans le dossier 'Ground_Truth' au format TUM vi
 
 
 Afin d’évaluer les résultats dans le cas des ensembles de donnés de TUM-vi et EuRoC,
@@ -176,7 +176,7 @@ python3 Data_analysis_v0.x.py
 
 La version 0.1 va créer des fichiers contenant différentes informations sur les données (dans le dossier 'results/Data_analysis_output') quand le 0.2 va afficher différentes courbes à propos des trajectoires.
 
-Pour ce qui est des résultats des temps de calculs, j'ai fait le script 'Computing_time_analysis.py' aui s'exécute comme les précédents.
+Pour ce qui est des résultats des temps de calculs, j'ai fait le script 'Computing_time_analysis.py' qui s'exécute comme les précédents.
 Il va afficher un boxplot pour chaque sous-dossiers du dossier 'results/ORB_SLAM3_output'.
 
 ----------------------------------------------
